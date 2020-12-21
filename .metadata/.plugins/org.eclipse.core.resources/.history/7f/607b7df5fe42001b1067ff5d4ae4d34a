@@ -1,0 +1,17 @@
+package pack2;
+
+import pack1.DefAccessSpecifier;
+import pack3.PriAccessSpecifier;
+
+public class AccessSpecifierTest2 {
+
+	public static void main(String[] args) {
+		DefAccessSpecifier accessSpecifier = new DefAccessSpecifier();
+		accessSpecifier.display1();
+		
+		PriAccessSpecifier accessSpecifier2= new PriAccessSpecifier();
+		//accessSpecifier2.welcome();
+	}
+
+}
+

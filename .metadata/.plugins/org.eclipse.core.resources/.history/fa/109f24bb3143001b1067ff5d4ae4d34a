@@ -1,0 +1,9 @@
+package pack3;
+
+public class PriAccessSpecifier {
+	
+	private void display() {
+		System.out.println("I am private method!");
+	}
+
+}

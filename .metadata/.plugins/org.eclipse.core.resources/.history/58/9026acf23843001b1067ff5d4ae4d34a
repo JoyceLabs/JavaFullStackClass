@@ -1,0 +1,13 @@
+package pack5;
+
+import pack4.BaseClass;
+
+public class DerivedClass extends BaseClass {
+
+	public static void main(String[] args) {
+		DerivedClass class1 = new DerivedClass();
+		class1.display();
+	}
+
+}
+
