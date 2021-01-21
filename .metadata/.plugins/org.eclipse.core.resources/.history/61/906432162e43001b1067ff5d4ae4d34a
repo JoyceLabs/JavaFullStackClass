@@ -1,9 +1,0 @@
-package pack3;
-
-public class BaseClass {
-	
-	private void display() {
-		System.out.println("I am private method!");
-	}
-
-}

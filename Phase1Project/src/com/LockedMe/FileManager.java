@@ -47,7 +47,9 @@ public class FileManager {
 					case "2":
 						System.out.println("Please specify the file you would like to delete:");
 						fileSelection = s.nextLine();
-						FilesWork.deleteFile(fileSelection, directoryPath);
+						if (FilesWork.searchFile(fileSelection, directoryPath) == true) {
+							FilesWork.deleteFile(fileSelection, directoryPath);							
+						}
 						break;		
 					case "3":
 						//search for a file, user needs to specify a file and you will search the folder for the file using case sensitive

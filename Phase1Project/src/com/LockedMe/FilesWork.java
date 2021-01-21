@@ -24,10 +24,12 @@ public class FilesWork {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	
 	}
 
 	public static void copyFile(String filePath, File directoryPath) {
 		File myFile = new File(filePath);
+
 		if(myFile.exists() && !myFile.isDirectory()) {
 			try {
 				Files.copy(myFile.toPath(),(new File(directoryPath + "\\" + myFile.getName())).toPath(), StandardCopyOption.REPLACE_EXISTING);
@@ -39,13 +41,29 @@ public class FilesWork {
 		}
 	}
 
-	public static void searchFile(String filePath, File directoryPath) {
+	public static boolean searchFile(String filePath, File directoryPath) {
 		File searchFile = new File(directoryPath + "\\" + filePath);
+		String foundFileName = null;
+		
 		if(searchFile.exists() && !searchFile.isDirectory()) {
-			System.out.println("File is found at the root directory");							
+				try { 
+					foundFileName = searchFile.getCanonicalFile().getName();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				
+				if(foundFileName.equals(filePath)) { 
+					System.out.println("The file specified is found in the root folder.");	
+					return true;
+				}else {
+					System.out.println("The file you specified does not match the case found in the root folder");				
+					return false;
+				}
 		} else {
 			System.out.println("No file found at the root directory, please check the filename");							
+			return false;
 		}
+		
 	}
 
 }
